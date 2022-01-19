@@ -105,7 +105,6 @@ public class LoremIpsumTestsRun {
         driver.findElement(xpath(GENERATE_LOREM_IPSUM_BUTTON)).click();
         waitForPageLoadComplete(driver);
         List<WebElement> generatedResults = driver.findElements(xpath(GENERATED_RESULT_ELEMENT));
-//        SoftAssertions softly = new SoftAssertions();
         generatedResults.forEach(paragraph -> Assert.assertFalse(paragraph.getText().startsWith("Lorem ipsum")));
     }
 
